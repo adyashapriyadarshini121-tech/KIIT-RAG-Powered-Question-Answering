@@ -1,4 +1,3 @@
-
 import streamlit as st
 import os
 import chromadb
@@ -19,7 +18,7 @@ st.write(
 # -----------------------------
 # Groq API
 # -----------------------------
-groq_api_key = os.environ.get("GROQ_API_KEY")
+groq_api_key = st.secrets.get("GROQ_API_KEY")
 
 if not groq_api_key:
     st.error("GROQ_API_KEY is not available.")
